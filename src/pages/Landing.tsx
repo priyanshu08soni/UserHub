@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, Users, Shield, BarChart4 } from 'lucide-react';
-import img from "../assets/home_image.png";
+import { ArrowRight } from 'lucide-react';
+import img from "../assets/home_image.jpg";
 const Landing = () => {
   const { isAuthenticated } = useAuth();
 
