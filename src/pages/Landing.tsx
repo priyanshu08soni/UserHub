@@ -3,7 +3,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Users, Shield, BarChart4 } from 'lucide-react';
-
+import img from "../assets/home_image.png";
 const Landing = () => {
   const { isAuthenticated } = useAuth();
 
@@ -41,91 +41,12 @@ const Landing = () => {
               </div>
               <div className="hidden md:block">
                 <img
-                  src="https://images.unsplash.com/photo-1586473219010-2ffc57b0d282?q=80&w=1000&auto=format&fit=crop"
+                  src={img}
                   alt="User Management"
                   className="rounded-lg shadow-xl w-full object-cover max-h-[400px]"
                 />
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-20 px-4 bg-white">
-          <div className="container mx-auto max-w-6xl">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Key Features</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Our platform offers a comprehensive set of tools to help you manage your users effectively.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <Users className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold">User Management</h3>
-                  <p className="text-gray-600">
-                    Easily manage your users with our intuitive interface. Add, edit, and remove users with just a few clicks.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-                  <div className="bg-green-100 p-3 rounded-full">
-                    <Shield className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold">Secure Access</h3>
-                  <p className="text-gray-600">
-                    Protect your data with our secure authentication system. Control who has access to your platform.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-                  <div className="bg-purple-100 p-3 rounded-full">
-                    <BarChart4 className="h-8 w-8 text-purple-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold">Analytics</h3>
-                  <p className="text-gray-600">
-                    Gain insights into user behavior with our comprehensive analytics dashboard.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4 bg-blue-50">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who are already using our platform
-              to manage their users effectively.
-            </p>
-            {!isAuthenticated && (
-              <Link to="/login">
-                <Button size="lg" className="gap-2">
-                  Sign In Now
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-            )}
-            {isAuthenticated && (
-              <Link to="/users">
-                <Button size="lg" className="gap-2">
-                  Go to Dashboard
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-            )}
           </div>
         </section>
       </main>
